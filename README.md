@@ -64,10 +64,10 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_order_management_db"></a> [order\_management\_db](#module\_order\_management\_db) | ./modules/database_sql | n/a |
-| <a name="module_payment_management_db"></a> [payment\_management\_db](#module\_payment\_management\_db) | ./modules/database_sql | n/a |
-| <a name="module_product_catalog_db"></a> [product\_catalog\_db](#module\_product\_catalog\_db) | ./modules/database_nosql | n/a |
-| <a name="module_production_management_db"></a> [production\_management\_db](#module\_production\_management\_db) | ./modules/database_sql | n/a |
+| <a name="module_orders_db"></a> [orders\_db](#module\_orders\_db) | ./modules/database_sql | n/a |
+| <a name="module_payments_db"></a> [payments\_db](#module\_payments\_db) | ./modules/database_sql | n/a |
+| <a name="module_productions_db"></a> [productions\_db](#module\_productions\_db) | ./modules/database_sql | n/a |
+| <a name="module_products_db"></a> [products\_db](#module\_products\_db) | ./modules/database_nosql | n/a |
 ## Resources
 
 No resources.
