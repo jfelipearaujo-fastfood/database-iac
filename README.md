@@ -64,6 +64,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_customers_db"></a> [customers\_db](#module\_customers\_db) | ./modules/database_sql | n/a |
 | <a name="module_orders_db"></a> [orders\_db](#module\_orders\_db) | ./modules/database_sql | n/a |
 | <a name="module_payments_db"></a> [payments\_db](#module\_payments\_db) | ./modules/database_sql | n/a |
 | <a name="module_productions_db"></a> [productions\_db](#module\_productions\_db) | ./modules/database_sql | n/a |

@@ -56,3 +56,18 @@ module "productions_db" {
 
   vpc_name = var.vpc_name
 }
+
+module "customers_db" {
+  source = "./modules/database_sql"
+
+  region = var.region
+
+  db_name           = "customers"
+  db_engine         = "postgres"
+  db_engine_version = "16"
+  db_instance_class = "db.t3.micro"
+  db_port           = 5432
+  db_username       = "fastfood"
+
+  vpc_name = var.vpc_name
+}
