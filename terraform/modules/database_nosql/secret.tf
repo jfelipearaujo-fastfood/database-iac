@@ -37,6 +37,6 @@ resource "aws_iam_policy" "db_secret_policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "db_secret_policy_attachment" {
-  role       = "fastfood-service-account-role"
+  role       = "${var.db_name}-service-account-role"
   policy_arn = aws_iam_policy.db_secret_policy.arn
 }
