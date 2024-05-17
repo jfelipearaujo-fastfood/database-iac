@@ -48,6 +48,9 @@ gen-cloud-diagrams:
 	@echo "Generating Cloud Diagrams..."
 	@cd docs && python3 cloud_aws_databases.py
 
+TAG := $(shell git describe --tags --abbrev=0 2>/dev/null)
+VERSION := $(shell echo $(TAG) | sed 's/v//')
+
 tag:
 	@if [ -z "$(TAG)" ]; then \
         echo "No previous version found. Creating v1.0 tag..."; \

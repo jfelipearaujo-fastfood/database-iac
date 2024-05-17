@@ -39,15 +39,18 @@ item_attr = {
 
 with Diagram("Cloud AWS Databases", show=False, graph_attr=diagram_attr):    
     with Cluster("AWS"):        
-        product_catalog_db = Mongodb("Product\nCatalog")
-        product_catalog_db >> SecretsManager("DB URL")
+        products_db = Mongodb("Products")
+        products_db >> SecretsManager("DB URL")
 
-        order_db = RDS("Orders DB")
-        order_db >> SecretsManager("DB URL")
+        orders_db = RDS("Orders DB")
+        orders_db >> SecretsManager("DB URL")
 
-        payment_db = RDS("Payments DB")
-        payment_db >> SecretsManager("DB URL")
+        payments_db = RDS("Payments DB")
+        payments_db >> SecretsManager("DB URL")
 
-        production_db = RDS("Production DB")
-        production_db >> SecretsManager("DB URL")
+        productions_db = RDS("Productions DB")
+        productions_db >> SecretsManager("DB URL")
+
+        customers_db = RDS("Customers DB")
+        customers_db >> SecretsManager("DB URL")
 
