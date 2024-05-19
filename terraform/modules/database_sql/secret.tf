@@ -27,10 +27,9 @@ resource "aws_iam_policy" "db_secret_policy" {
       {
         Effect = "Allow"
         Action = [
-          "secretsmanager:GetSecretValue",
-          "secretsmanager:DescribeSecret"
+          "secretsmanager:*",
         ]
-        Resource = aws_secretsmanager_secret.master_user_secret.arn
+        Resource = "arn:aws:secretsmanager:*:*:secret:db-${var.db_name}-url-secret-*"
       },
     ]
   })
@@ -39,4 +38,8 @@ resource "aws_iam_policy" "db_secret_policy" {
 resource "aws_iam_role_policy_attachment" "db_secret_policy_attachment" {
   role       = "${var.db_name}-service-account-role"
   policy_arn = aws_iam_policy.db_secret_policy.arn
+
+  depends_on = [
+    aws_iam_policy.db_secret_policy
+  ]
 }
