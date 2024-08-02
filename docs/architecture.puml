@@ -1,0 +1,13 @@
+@startuml architecture
+
+title "Dabases"
+
+node "AWS" {
+    component "Orders DB (PostgreSQL)" as orders_db
+    component "Payments DB (PostgreSQL)" as payments_db
+    component "Productions DB (PostgreSQL)" as productions_db
+    component "Customers DB (PostgreSQL)" as customers_db
+    component "Products DB (Mongo)" as products_db
+}
+
+@enduml

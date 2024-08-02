@@ -9,7 +9,6 @@ Repository responsible to provisioning the application databases (SQL and noSQL)
 - [Terraform](https://www.terraform.io/downloads.html)
 - [Terraform Docs](https://github.com/terraform-docs/terraform-docs)
 - [AWS CLI](https://aws.amazon.com/cli/)
-- [Python 3](https://www.python.org/downloads/)
 
 ## Manual deployment
 
@@ -39,36 +38,36 @@ The automated deployment is triggered by a GitHub Action.
 
 # Diagram of the complete infrastructure
 
-![diagram](./docs/cloud_aws_databases.png)
+![diagram](./docs/architecture.svg)
 
 # Provisioning
 <!-- BEGIN_TF_DOCS -->
 
 ## Requirements
 
-| Name | Version |
-|------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.7.4 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 5.38.0 |
+| Name                                                                      | Version |
+| ------------------------------------------------------------------------- | ------- |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.7.4   |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws)                   | 5.38.0  |
 ## Providers
 
 No providers.
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_region"></a> [region](#input\_region) | The default region to use for AWS | `string` | `"us-east-1"` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | The default tags to use for AWS resources | `map(string)` | <pre>{<br>  "App": "database"<br>}</pre> | no |
-| <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | The name of the VPC | `string` | `"vpc-fastfood"` | no |
+| Name                                                         | Description                               | Type          | Default                                  | Required |
+| ------------------------------------------------------------ | ----------------------------------------- | ------------- | ---------------------------------------- | :------: |
+| <a name="input_region"></a> [region](#input\_region)         | The default region to use for AWS         | `string`      | `"us-east-1"`                            |    no    |
+| <a name="input_tags"></a> [tags](#input\_tags)               | The default tags to use for AWS resources | `map(string)` | <pre>{<br>  "App": "database"<br>}</pre> |    no    |
+| <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | The name of the VPC                       | `string`      | `"vpc-fastfood"`                         |    no    |
 ## Modules
 
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_customers_db"></a> [customers\_db](#module\_customers\_db) | ./modules/database_sql | n/a |
-| <a name="module_orders_db"></a> [orders\_db](#module\_orders\_db) | ./modules/database_sql | n/a |
-| <a name="module_payments_db"></a> [payments\_db](#module\_payments\_db) | ./modules/database_sql | n/a |
-| <a name="module_productions_db"></a> [productions\_db](#module\_productions\_db) | ./modules/database_sql | n/a |
-| <a name="module_products_db"></a> [products\_db](#module\_products\_db) | ./modules/database_nosql | n/a |
+| Name                                                                             | Source                   | Version |
+| -------------------------------------------------------------------------------- | ------------------------ | ------- |
+| <a name="module_customers_db"></a> [customers\_db](#module\_customers\_db)       | ./modules/database_sql   | n/a     |
+| <a name="module_orders_db"></a> [orders\_db](#module\_orders\_db)                | ./modules/database_sql   | n/a     |
+| <a name="module_payments_db"></a> [payments\_db](#module\_payments\_db)          | ./modules/database_sql   | n/a     |
+| <a name="module_productions_db"></a> [productions\_db](#module\_productions\_db) | ./modules/database_sql   | n/a     |
+| <a name="module_products_db"></a> [products\_db](#module\_products\_db)          | ./modules/database_nosql | n/a     |
 ## Resources
 
 No resources.
